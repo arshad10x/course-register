@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Courses</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="container-fluid">
+    <div class="mt-4 d-flex justify-content-center">
+
+        <div class="card text-center" style="width: 18rem;">
+            <img class="card-img-top" src="./img/card-banner.jpg" alt="Card image cap">
+            <div class="card-body  text-center bg-light">
+              <h5 class="card-title">Certifited Course</h5>
+              <p class="card-text">Best demanding course to start yoru carrer in IT Sector. Get high paying job with this certified courses.</p>
+              <button
+              id="btnRegister"
+              data-bs-toggle="modal"
+              data-bs-target="#register"
+              class="btn btn-warning"
+            >
+              Apply Now
+            </button>
+            </div>
+          </div>
+
+     
+
+      <div class="modal fade" id="register">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Register Couses</h2>
+              <button data-bs-dismiss="modal" class="btn-close"></button>
+            </div>
+            <div class="modal-body">
+              <dl>
+                <dt>Course Name</dt>
+                <dd><input type="text" id="txtName" class="form-control" autocomplete="off"/></dd>
+                <dt>Course Price</dt>
+                <dd>
+                  <input type="number" id="txtPrice" class="form-control" />
+                </dd>
+                <dt>City</dt>
+                <dd>
+                  <select id="lstCities" class="form-select">
+                    <option>Choose City</option>
+                    <option>Hyderabad</option>
+                    <option>Bangalore</option>
+                    <option>Pune</option>
+                  </select>
+                </dd>
+                <dt>Course</dt>
+                <dd class="form-switch">
+                  <input
+                    type="checkbox"
+                    id="optCourse"
+                    class="form-check-input"
+                  />Avaliable
+                </dd>
+              </dl>
+            </div>
+            <div class="modal-footer">
+              <button
+                id="modalEnrollBtn"
+                onclick="EnrollClick()"
+                data-bs-dismiss="modal"
+                class="btn btn-primary"
+              >
+                Enroll
+              </button>
+              <button data-bs-dismiss="modal" class="btn btn-danger" id="deleteBtn">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class=" text-center details-container d-flex justify-content-center mt-5">
+        <div style="display: none;" id="courseDetails">
+            <h2>Course Details</h2>
+           <div class="text-center">
+            <dl class="row border border-2 text-start">
+                <dt class="col-4 mb-4">Course Name:</dt>
+                <dd class="col-8 mb-4" id="lblName"></dd>
+                <dt class="col-4 mb-4">Course Price:</dt>
+                <dd class="col-8 mb-4" id="lblPrice"></dd>
+                <dt class="col-4 mb-4">City:</dt>
+                <dd class="col-8 mb-4" id="lblCity"></dd>
+                <dt class="col-4 mb-4">Course Status:</dt>
+                <dd class="col-8 mb-4" id="lblCourse"></dd>
+            </dl>
+           </div>
+            <div>
+                <button onclick="EditClick()" data-bs-target="#register" data-bs-toggle="modal" class="btn btn-success"><span class="bi bi-pen-fill"></span>Edit</button>
+                <button onclick="DeleteClick()" class="btn btn-danger  ms-5"><span class="bi bi-trash-fill"></span>Delete</button>
+            </div>
+        </div>
+    </div>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./script/registerCourses.js"></script>
+  </body>
+</html>
